@@ -19,7 +19,6 @@ import IMG11 from "../../assets/img11.jpg";
 import IMG12 from "../../assets/img12.JPG";
 import IMG13 from "../../assets/img13.jpg";
 import IMG14 from "../../assets/img14.jpg";
-import IMG15 from "../../assets/img15.jpg";
 const Testimonials = () => {
   return (
     <section id="myPhotos">
