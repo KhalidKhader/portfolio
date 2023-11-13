@@ -1,0 +1,94 @@
+.experience__container{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+}
+
+.experience__container > div{
+    background: var(--color-bg-variant);
+    padding: 2.4rem 5rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition:var(--transition);
+    align-items:center;
+    }
+
+    .experience__container > div:hover{
+        background: transparent;
+        border-color: var(--color-primary-variant);
+        cursor: default;
+        }
+    
+      @media screen and (max-width: 1024px){
+        .experience__container{
+            grid-template-columns: 1fr;
+        }
+        .experience__container > div{
+            width: 80%;
+            padding: 12rem;
+            margin: 10 auto;
+        }
+        .experience__content{
+            padding: 10rem;
+        }
+      }
+
+      @media screen and (max-width: 600px){
+        .experience__container{
+            gap:1rem;
+        }
+        .experience__container > div{
+            width: 100%;
+            padding: 2rem 1rem;
+            margin: 0 auto;
+        }
+        .experience__content{
+            padding: 1rem;
+        }
+      }
+        .cta{
+        display: flex;
+        gap: 1.2rem;
+        justify-content: center;
+    }
+    @media screen and (max-width: 1024px){
+        .experience__container{
+            grid-template-columns: 1fr;
+        }
+        .experience__container > div{
+            width: 80%;
+            padding: 2rem;
+            margin: 0 auto;
+        }
+        .experience__content{
+            padding: 1rem;
+        }
+      }
+
+      .experience__container  img{
+        background-color: white;
+        margin: auto;
+        margin-top: 1rem;
+        padding: 1rem;
+        width: 60%;
+        height: auto;
+        border-radius: 0.5rem;
+      }
+
+      .experience__container small{
+        color: gold;
+        display:block;
+        font-size: 0.7rem;
+        text-align:right;
+      }
+
+.lnkin{
+  margin-top: 1rem;
+  margin-left: auto;
+  border-radius: 5rem;
+}
+      
+.bf{
+  margin-left: 6rem;
+}
+      

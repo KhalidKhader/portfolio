@@ -1,0 +1,10 @@
+.calendly h2,h3{
+    margin-top: 1rem;
+    color:var(--color-primary);
+    text-align: center;
+}
+.calendly{
+    overflow: hidden;
+    height: 100%;
+    scroll-behavior: auto;
+}
