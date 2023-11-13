@@ -69,7 +69,7 @@ const Contact = () => {
             <MdOutlineMarkEmailRead className="contact__option-icon" />
             <h4>Email</h4>
             <h5>Khalidalkhader@gmail.com</h5>
-            <a href="mailto:khalidalkhader@gmail.com" target="_blank">
+            <a href="mailto:khalidalkhader@gmail.com" target="_blank" rel="noopener noreferrer">
               Send a Email
             </a>
           </article>
@@ -78,7 +78,7 @@ const Contact = () => {
             <SiMessenger className="contact__option-icon" />
             <h4>Messenger</h4>
             <h5>Khalid Khader</h5>
-            <a href="https://m.me/khalidalkhader2000/" target="_blank">
+            <a href="https://m.me/khalidalkhader2000/" target="_blank" rel="noopener noreferrer">
               Send a Message
             </a>
           </article>
@@ -87,7 +87,7 @@ const Contact = () => {
             <ImWhatsapp className="contact__option-icon" />
             <h4>WhatsApp</h4>
             <h5>+972568807701</h5>
-            <a href="https://wa.me/972568807701" target="_blank">
+            <a href="https://wa.me/972568807701" target="_blank" rel="noopener noreferrer">
               Send a Message
             </a>
           </article>

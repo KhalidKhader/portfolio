@@ -3,8 +3,7 @@ import './education.css';
 import dojo from '../../assets/dojo.svg';
 import bzu from '../../assets/bzu.png';
 import aaup from '../../assets/aaup.png';
-import bep from '../../assets/bep.jpeg';
-import Knowledge from '../../assets/knowledge.png';
+
 
 
 

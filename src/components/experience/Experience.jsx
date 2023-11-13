@@ -94,6 +94,7 @@ const Experience = () => {
               href="https://apex.oracle.com/pls/apex/r/aaup/smart-advising-system/home?session=14967676746998"
               target="_blank"
               class="btn-primary btn"
+              rel="noopener noreferrer"
             >
               Smart Advising System
             </a>
