@@ -9,7 +9,6 @@ import {
 import {
   SiJavascript,
   SiCss3,
-  SiJava,
   SiMysql,
   SiCisco,
   SiOracle,
@@ -44,6 +43,7 @@ import { FaPython, FaReact, FaLinux, FaAngular } from "react-icons/fa";
 import { GiComputing, GiCircuitry, GiAutoRepair } from "react-icons/gi";
 import { BsGithub } from "react-icons/bs";
 import { VscRegex,VscGraph } from "react-icons/vsc";
+import {DiJava} from "react-icons/di"
 
 
 const Skills = () => {
@@ -70,7 +70,7 @@ const Skills = () => {
           <div className="experience__content">
             <article className="experience__details">
               <h4>
-                JAVA <SiJava />
+                JAVA <DiJava />
               </h4>
               <small className="text-light">
                 <AiFillCheckCircle /> Intermediate
