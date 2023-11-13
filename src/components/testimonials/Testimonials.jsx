@@ -1,4 +1,5 @@
 import React from "react";
+// Import Swiper styles
 import "./testimonials.css";
 import "swiper/css";
 import "swiper/css/navigation";
