@@ -16,14 +16,14 @@ const Experience = () => {
       <h5>What Experience I have ?</h5>
       <h2>My Experience</h2>
       <div className="container experience__container">
-        <div>
+        {/* <div>
           <h2>The National Bank TNB</h2>
 
           <h3>DATA SCIENTIST</h3>
           <small>FEB 2024 – PRESENT</small>
           <p>As a Data Scientist and Machine Learning Engineer in the national  bank, I played a pivotal role in leveraging data to drive informed decision-making and enhance business processes. By developing and implementing advanced machine learning models and algorithms to analyze vast datasets, predict trends, and optimize financial strategies. Collaborating closely with database administrators, you will design and maintain robust data architectures, ensuring seamless integration and accessibility of data for analytical purposes. Also, My expertise in statistical analysis, data mining, and predictive modeling will be crucial in developing risk assessment models, fraud detection algorithms, and customer segmentation strategies. Additionally, I worked collaboratively with cross-functional teams to translate business requirements into scalable and efficient machine learning solutions, contributing to the bank's overall success in navigating the evolving landscape of financial technology and data-driven decision-making.</p>
           <img src={tnb} alt="tnb" />
-        </div>
+        </div> */}
         <div>
           <h2>AXSOS ACADEMY GMBH</h2>
 
@@ -39,7 +39,7 @@ const Experience = () => {
           </p>
           <img src={axsos} alt="axsos" />
           <br></br>
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7086262245428502528" height="1003" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>        </div>
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7086262245428502528" height="350" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>        </div>
         <div>
           <h2>AXSOS ACADEMY GMBH</h2>
 
@@ -56,7 +56,7 @@ const Experience = () => {
           </p>
           <img src={axsos} alt="axsos" />
           <br></br>
-          <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FAXSOSAcademy%2Fposts%2Fpfbid037jiHQSF6LRiMzdfFJoWkBr5jcpBRaZdvvAoD1bs8H4GcCTq9SUxEM4QLssMdw5FXl&show_text=true&width=500" width="500" height="759"  scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+          <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FAXSOSAcademy%2Fposts%2Fpfbid037jiHQSF6LRiMzdfFJoWkBr5jcpBRaZdvvAoD1bs8H4GcCTq9SUxEM4QLssMdw5FXl&show_text=true&width=500" width="500" height="350"  scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
         <div>
           <h2>Exalt Technologies </h2>
@@ -125,7 +125,7 @@ const Experience = () => {
           </p>
           <img src={tap} alt="tap" />
           <br></br>
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7134841966789316608" height="476" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7134841966789316608" height="350" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
         </div>
         <div>
           <h2>MANARAH</h2>

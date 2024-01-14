@@ -9,6 +9,7 @@ import About from './components/about/About';
 import Education from './components/education/education';
 import Calendly from './components/Calendly/Calendly';
 import Testimonials from './components/testimonials/Testimonials';
+import BrainTumors from './components/BrainTumors/BrainTumors';
 const App = () => {
   return (
    <>
@@ -16,6 +17,7 @@ const App = () => {
     <Nav/>
     <Education/>
     <Skills/>
+    <BrainTumors/>
     <Contact/>
     <Calendly link={'khalidalkhader'} type={'Personal meeting'}/>
     <About/>
