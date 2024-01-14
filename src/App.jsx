@@ -18,7 +18,6 @@ const App = () => {
     <Skills/>
     <Contact/>
     <Calendly link={'khalidalkhader'} type={'Personal meeting'}/>
-    <Calendly link={'khalid-khader'} type={'during work hours in AXSOS Academy'}/>
     <About/>
     <Portfolio/>
     <Experience/>

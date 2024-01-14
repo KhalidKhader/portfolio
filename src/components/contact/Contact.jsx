@@ -70,7 +70,7 @@ const Contact = () => {
             <h4>Email</h4>
             <h5>Khalidalkhader@gmail.com</h5>
             <a href="mailto:khalidalkhader@gmail.com" target="_blank" rel="noopener noreferrer">
-              Send a Email
+              Send an Email
             </a>
           </article>
 
