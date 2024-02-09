@@ -10,12 +10,15 @@ import Education from './components/education/education';
 import Calendly from './components/Calendly/Calendly';
 import Testimonials from './components/testimonials/Testimonials';
 import BrainTumors from './components/BrainTumors/BrainTumors';
+import  MedApp from './components/medApp/MedApp';
+
 const App = () => {
   return (
    <>
     <Header/>
     <Nav/>
     <Education/>
+    <MedApp/>
     <Skills/>
     <BrainTumors/>
     <Contact/>

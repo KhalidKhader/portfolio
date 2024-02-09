@@ -16,19 +16,19 @@ const Experience = () => {
       <h5>What Experience I have ?</h5>
       <h2>My Experience</h2>
       <div className="container experience__container">
-        {/* <div>
+        <div>
           <h2>The National Bank TNB</h2>
 
           <h3>DATA SCIENTIST</h3>
-          <small>FEB 2024 – PRESENT</small>
+          <small>Mar 2024 – PRESENT</small>
           <p>As a Data Scientist and Machine Learning Engineer in the national  bank, I played a pivotal role in leveraging data to drive informed decision-making and enhance business processes. By developing and implementing advanced machine learning models and algorithms to analyze vast datasets, predict trends, and optimize financial strategies. Collaborating closely with database administrators, you will design and maintain robust data architectures, ensuring seamless integration and accessibility of data for analytical purposes. Also, My expertise in statistical analysis, data mining, and predictive modeling will be crucial in developing risk assessment models, fraud detection algorithms, and customer segmentation strategies. Additionally, I worked collaboratively with cross-functional teams to translate business requirements into scalable and efficient machine learning solutions, contributing to the bank's overall success in navigating the evolving landscape of financial technology and data-driven decision-making.</p>
           <img src={tnb} alt="tnb" />
-        </div> */}
+        </div>
         <div>
           <h2>AXSOS ACADEMY GMBH</h2>
 
           <h3>DATA SCIENCE AND MACHINE LEARNNG ENGINEER/TA</h3>
-          <small>AUG 2023 – FEB 2024</small>
+          <small>AUG 2023 – Mar 2024</small>
           <p>
             Start working on data science and machine learning with basic
             knowledge of NumPy, Pandas, MatPlotlib, Seaborn, Folium, scikit
@@ -140,7 +140,7 @@ const Experience = () => {
           <img src={manara} alt="manara" />
         </div>
 
-        <div>
+        {/* <div>
           <h2>KNOWLEDGE ACADEMY</h2>
 
           <h3>PROFESSIONAL MENTOR</h3>
@@ -151,7 +151,7 @@ const Experience = () => {
             Learning, Data Science, Deep Learning, Computer vision.
           </p>
           <img src={knowledge} alt="knowledge" />
-        </div>
+        </div> */}
       </div>
     </section>
   );
