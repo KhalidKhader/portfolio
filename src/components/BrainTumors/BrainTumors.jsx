@@ -17,7 +17,7 @@ const BrainTumors = () => {
         <h3>By Khalid Khader</h3>
         <small>Jan 2023 – PRESENT</small>
         <br></br>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7142584043887407104" height="809" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7142584043887407104" height="600" width="400" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
       </div>
   );
 };
