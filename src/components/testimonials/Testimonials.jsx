@@ -1,6 +1,6 @@
 import React from "react";
+import { Box, Typography, Container, Grid, Card, CardContent, CardMedia, useTheme, alpha } from '@mui/material';
 // Import Swiper styles
-import "./testimonials.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -20,110 +20,134 @@ import IMG11 from "../../assets/img11.jpg";
 import IMG12 from "../../assets/img12.JPG";
 import IMG13 from "../../assets/img13.jpg";
 import IMG14 from "../../assets/img14.jpg";
+import IMG16_NEW from "../../assets/IMG_3124.jpg";
+import IMG17_NEW from "../../assets/IMG_3126.jpg";
+import Khalid from "../../assets/Khalid.png";
+import IMG18 from "../../assets/me1A.png";
+import IMG19 from "../../assets/me2A.png";
+import IMG20 from "../../assets/IMG_4361.jpg";
+import IMG21 from "../../assets/IMG_4357.JPG";
 
 const Testimonials = () => {
+  const theme = useTheme();
+  
+  const photos = [
+    { img: IMG16_NEW, year: "2024" },
+    { img: IMG1, year: "2022" },
+    { img: IMG2, year: "2021" },
+    { img: IMG3, year: "2018" },
+    { img: IMG4, year: "2022" },
+    { img: IMG5, year: "2018" },
+    { img: IMG6, year: "2016" },
+    { img: IMG7, year: "2018" },
+    { img: IMG8, year: "2015" },
+    { img: IMG9, year: "2019" },
+    { img: IMG10, year: "2020" },
+    { img: IMG11, year: "2018" },
+    { img: IMG12, year: "2020" },
+    { img: IMG13, year: "2020" },
+    { img: IMG14, year: "2020" },
+    { img: IMG18, year: "2022" },
+    { img: IMG19, year: "2022" },
+  ];
+
   return (
-    <section id="myPhotos">
-      <article className="myPhotos">
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG1} alt="khalid" />
-          </div>
-          <h5 className="place">Exalt Technologies</h5>
-        </div>
+    <Box 
+      component="section" 
+      id="myPhotos"
+      sx={{
+        py: { xs: 8, md: 10 },
+        backgroundColor: 'background.default'
+      }}
+    >
+      <Container>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography 
+            variant="subtitle1" 
+            color="text.secondary" 
+            gutterBottom
+          >
+            Photo Gallery
+          </Typography>
+          <Typography 
+            variant="h2" 
+            component="h2" 
+            color="primary.main"
+            sx={{ 
+              mb: 2,
+              position: 'relative',
+              display: 'inline-block',
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: '-10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '80px',
+                height: '3px',
+                backgroundColor: 'primary.main'
+              }
+            }}
+          >
+            My Journey
+          </Typography>
+        </Box>
 
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG2} alt="khalid" />
-          </div>
-          <h5 className="place">Faculty of Engineering AAUP </h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG3} alt="khalid" />
-          </div>
-          <h5 className="place">Eid AlAdha 2018</h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG4} alt="khalid" />
-          </div>
-          <h5 className="place">My Senior Project 1</h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG5} alt="khalid" />
-          </div>
-          <h5 className="place">Me 2018</h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG6} alt="khalid" />
-          </div>
-          <h5 className="place">Me 2016</h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG7} alt="khalid" />
-          </div>
-          <h5 className="place">AAUP President Office 2018</h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG8} alt="khalid" />
-          </div>
-          <h5 className="place">Me 2015</h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG9} alt="khalid" />
-          </div>
-          <h5 className="place">Me Betlehem 2019</h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG10} alt="khalid" />
-          </div>
-          <h5 className="place">Me 2020</h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG11} alt="khalid" />
-          </div>
-          <h5 className="place">Rawabi 2018</h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG12} alt="khalid" />
-          </div>
-          <h5 className="place">Me 2020</h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG13} alt="khalid" />
-          </div>
-          <h5 className="place">Rawabi 2020</h5>
-        </div>
-
-        <div>
-          <div className="myPhotos__item">
-            <img src={IMG14} alt="khalid" />
-          </div>
-          <h5 className="place">Me 2020</h5>
-        </div>
-      </article>
-    </section>
+        <Grid container spacing={3}>
+          {photos.map((photo, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <Card
+                elevation={3}
+                sx={{
+                  height: '100%',
+                  borderRadius: '15px',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease',
+                  backgroundColor: alpha(theme.palette.background.paper, 0.7),
+                  border: '1px solid',
+                  borderColor: 'rgba(100, 255, 218, 0.1)',
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: '0 15px 30px rgba(0, 0, 0, 0.2)',
+                    borderColor: 'primary.main',
+                    '& .MuiCardMedia-root': {
+                      transform: 'scale(1.05)'
+                    }
+                  }
+                }}
+              >
+                <Box sx={{ position: 'relative', pt: '100%', overflow: 'hidden' }}>
+                  <CardMedia
+                    component="img"
+                    image={photo.img}
+                    alt={`Khalid ${photo.year}`}
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform 0.6s ease'
+                    }}
+                  />
+                </Box>
+                <CardContent sx={{ textAlign: 'center', py: 2 }}>
+                  <Typography 
+                    variant="h6" 
+                    component="h3"
+                    color="primary.main"
+                    fontWeight={600}
+                  >
+                    {photo.year}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 

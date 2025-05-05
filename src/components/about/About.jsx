@@ -1,67 +1,240 @@
 import React from 'react';
-import './about.css';
-import {FaAward} from 'react-icons/fa';
-import {MdOutlineCastForEducation} from 'react-icons/md';
-import {GoProject} from 'react-icons/go';
-import {MdOutlineVerifiedUser} from 'react-icons/md';
+import { 
+  Box, 
+  Typography, 
+  Container, 
+  Grid, 
+  Card, 
+  CardContent, 
+  Button, 
+  Avatar, 
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+  useTheme
+} from '@mui/material';
+import { FaAward } from 'react-icons/fa';
+import { MdOutlineCastForEducation } from 'react-icons/md';
+import { GoProject } from 'react-icons/go';
+import { MdOutlineVerifiedUser } from 'react-icons/md';
 import Rawabi from '../../assets/rawabi.JPG';
 
 const About = () => {
+  const theme = useTheme();
+
+  // About card data
+  const aboutCards = [
+    {
+      id: 1,
+      icon: <FaAward fontSize="inherit" />,
+      title: "Experience",
+      items: [
+        "+3 Years Professional Experience",
+        "+1 Year Web Development",
+        "+2 Years AI and ML Engineering"
+      ]
+    },
+    {
+      id: 2,
+      icon: <MdOutlineCastForEducation fontSize="inherit" />,
+      title: "Education",
+      items: [
+        "BSc. Computer Systems Engineering",
+        "MSc. Computer Engineering - ML & AI"
+      ]
+    },
+    {
+      id: 3,
+      icon: <GoProject fontSize="inherit" />,
+      title: "Projects",
+      items: [
+        "+15 Completed Projects",
+        "Focus on ML and Data Science in Healthcare"
+      ]
+    },
+    {
+      id: 4,
+      icon: <MdOutlineVerifiedUser fontSize="inherit" />,
+      title: "Future Goals",
+      items: [
+        "PhD in Machine Learning",
+        "Industry Experience in AI Research"
+      ]
+    }
+  ];
+
   return (
-    <section id='about'>
-      <h5>Get To Know</h5>
-      <h2>About Me</h2>
+    <Box 
+      component="section" 
+      id="about" 
+      sx={{ 
+        py: { xs: 8, md: 10 },
+        backgroundColor: 'background.default'
+      }}
+    >
+      <Container>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography 
+            variant="subtitle1" 
+            color="text.secondary" 
+            gutterBottom
+          >
+            Get To Know
+          </Typography>
+          <Typography 
+            variant="h2" 
+            component="h2" 
+            color="primary.main"
+            sx={{ 
+              mb: 2,
+              position: 'relative',
+              display: 'inline-block',
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: '-10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '80px',
+                height: '3px',
+                backgroundColor: 'primary.main'
+              }
+            }}
+          >
+            About Me
+          </Typography>
+        </Box>
 
-      <div className='container about__container'>
-        <div className='about__me'>
-          <img src={Rawabi} alt='Rawabi'/>
-          </div>
+        <Grid container spacing={6} alignItems="center">
+          {/* Image column */}
+          <Grid item xs={12} md={5}>
+            <Box 
+              sx={{
+                position: 'relative',
+                maxWidth: '400px',
+                mx: 'auto',
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: '20px',
+                  left: '20px',
+                  width: '100%',
+                  height: '100%',
+                  border: '2px solid',
+                  borderColor: 'primary.main',
+                  borderRadius: '15px',
+                  zIndex: 0
+                }
+              }}
+            >
+              <Box
+                component="img"
+                src={Rawabi}
+                alt="Khalid Khader"
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '15px',
+                  position: 'relative',
+                  zIndex: 1,
+                  boxShadow: '0 15px 30px rgba(0, 0, 0, 0.3)',
+                  transition: 'transform 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translate(-5px, -5px)'
+                  }
+                }}
+              />
+            </Box>
+          </Grid>
 
-        <div className='about__content'>
-          <div className='about__cards'>
+          {/* Content column */}
+          <Grid item xs={12} md={7}>
+            <Grid container spacing={2.5}>
+              {aboutCards.map(({ id, icon, title, items }) => (
+                <Grid item xs={12} sm={6} key={id}>
+                  <Card 
+                    elevation={3}
+                    sx={{
+                      height: '100%',
+                      borderRadius: '15px',
+                      transition: 'all 0.3s ease',
+                      border: '1px solid rgba(100, 255, 218, 0.1)',
+                      backgroundColor: 'rgba(17, 34, 64, 0.7)',
+                      '&:hover': {
+                        transform: 'translateY(-5px)',
+                        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
+                        borderColor: 'primary.main'
+                      }
+                    }}
+                  >
+                    <CardContent sx={{ p: 3 }}>
+                      <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
+                        <Avatar 
+                          sx={{ 
+                            bgcolor: 'rgba(100, 255, 218, 0.1)', 
+                            color: 'primary.main',
+                            mr: 1.5,
+                            fontSize: '1.5rem'
+                          }}
+                        >
+                          {icon}
+                        </Avatar>
+                        <Typography variant="h6" component="h3" color="text.primary">
+                          {title}
+                        </Typography>
+                      </Box>
+                      <Divider sx={{ mb: 2, borderColor: 'rgba(100, 255, 218, 0.2)' }} />
+                      <List dense disablePadding>
+                        {items.map((item, index) => (
+                          <ListItem key={index} disablePadding sx={{ pb: 0.75 }}>
+                            <ListItemText 
+                              primary={item} 
+                              primaryTypographyProps={{ 
+                                variant: 'body2',
+                                color: 'text.secondary',
+                                sx: { fontSize: '0.9rem' }
+                              }} 
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
 
-            <article className='about__card'>
-              <FaAward className='about__icon'/>
-            <h5>Experience</h5>
-            <h6>+2 Year Experience</h6>
-            <small>+1 Year Web dev Experience</small>
-            <br></br>
-            <small>+1 AI and ML Experience</small>
-            </article>
-
-            <article className='about__card'>
-              <MdOutlineCastForEducation className='about__icon'/>
-            <h5>Education</h5>
-            <small>BSc. Computer Systems Engineering</small>
-            <br></br>
-            <small>studying MSc. Computer Engineering</small>
-            </article>
-
-            <article className='about__card'>
-              <GoProject className='about__icon'/>
-            <h5>Projects</h5>
-            <small>+5 Completed</small>
-            <h6>start working in projects in ML and Data science, especially in Healthcare systems domain</h6>
-            </article>
+            <Typography 
+              variant="body1" 
+              color="text.secondary"
+              sx={{ 
+                mt: 4, 
+                mb: 3,
+                lineHeight: 1.8,
+                fontSize: { xs: '0.95rem', md: '1rem' }
+              }}
+            >
+              Previously, I was the AI Production Team Lead at MENA DEVS, specializing in NLP, computer vision, and AI-driven solutions. I have a proven track record in developing AI models for healthcare, HR analytics, and cybersecurity, including brain tumor classification, HR insights, and IoT security. With experience as a data scientist, machine learning engineer, and AI consultant, I have worked on AI-powered web applications integrating Oracle PL/SQL, MySQL, and Java, along with front-end development using React JS. I am passionate about AI consulting, curriculum development, and enterprise AI deployment, with a focus on integrating AI into software development to drive innovation and business impact. Additionally, I actively give talks and workshops on AI, machine learning, deep learning, and computer vision at well-known Palestinian academies like AXSOS Academy and TAP. I am also currently tuning the Whisper v3 model for Canadian French and English medical data and applying my expertise in medical AI research and technology entrepreneurship.
+            </Typography>
             
-            <article className='about__card'>
-              <MdOutlineVerifiedUser className='about__icon'/>
-            <h5>Next Plan</h5>
-            <small>Study PhD. in Machine Learning and get more real experience</small>
-            </article>
-
-          </div>
-            <p>
-            I am Khalid, I was born in Ramallah in 2000. I specialized in computer systems engineering at the Arab American University, and I completed my major in record time, 4 years instead of 5 years, and now I hope to study artificial intelligence in the next academic year 2022/2023, I like to develop myself and my skills then learn new things. The beginning of the path is a step, but I am now, although I am nearing to the end, but I want to develop until I have reached the highest capabilities. I am currently excellent as a hardware and software student, and I am working on developing myself in the software now. I have completed many courses in order to be a follower of technology, and I am still training and learning from the courses and continue to do more.
-            </p>
-            <a href='#contact' class='btn btn-primary'>Contact Me</a>
-
-          </div>
-
-        </div>
-    
-    </section>
+            <Button 
+              variant="contained" 
+              color="primary" 
+              href="#contact"
+              size="large"
+              sx={{ 
+                mt: 2,
+                fontWeight: 500
+              }}
+            >
+              Contact Me
+            </Button>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
-}
+};
 
 export default About;
