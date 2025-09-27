@@ -28,6 +28,7 @@ import aaup from "../../assets/aaup.png";
 import AI_Consulting_Services from "../../assets/AI-Consulting-Services.jpeg";
 import MenaDevs from "../../assets/MenaDevs.jpeg";
 import Bitlab from "../../assets/Bitlab.png";
+import MedidoHealth from "../../assets/Medido.png";
 
 const Experience = () => {
   const theme = useTheme();
@@ -36,16 +37,25 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      company: "Bitlab",
-      role: "AI and Software Engineering Consultant",
-      period: "Mar 2025 – PRESENT",
-      description: "Providing consultation services in AI and software engineering, working with clients to design and implement cutting-edge machine learning solutions and robust software architectures.",
-      image: Bitlab,
+      company: "MedidoHealth - USA",
+      role: "AI Specialist",
+      period: "July 2025 – PRESENT",
+      description: "Working on Pharmacy systems, by adding AI features using Vision Language Models, Graph RAG, Vertex AI, Google AI studio, and other AI systems for handwritten medical prescription recognition, triage, and patient identification projects for U.S. and Colombian clients.",
+      image: MedidoHealth,
       links: []
     },
     {
       id: 2,
-      company: "MenaDevs",
+      company: "Bitlab - Canada",
+      role: "AI and Software Engineering Consultant",
+      period: "Mar 2025 – PRESENT",
+      description: "Providing consultation services in AI and software engineering, working with clients to design and implement cutting-edge machine learning solutions and robust software architectures. Integrating Graph RAG, Azure AI Speech, Whisper v3 tuning, and Fast API/Nest JS systems into production healthcare workflows. Developing AI-powered medical systems using LLMs, speech-to-text, text-to-speech, and graph databases (Neo4J).",
+      image: Bitlab,
+      links: []
+    },
+    {
+      id: 3,
+      company: "MenaDevs - Jordan",
       role: "AI Team Lead",
       period: "Dec 2024 – May 2025",
       description: "Led the AI team in developing and implementing machine learning solutions for clients in the MENA region. Coordinated project timelines, mentored junior developers, and ensured the delivery of high-quality solutions that met client requirements.",
@@ -53,8 +63,8 @@ const Experience = () => {
       links: []
     },
     {
-      id: 3,
-      company: "AI Consulting Services",
+      id: 4,
+      company: "AI Consulting Services - KSA",
       role: "AI Consultant",
       period: "Mar 2024 – PRESENT",
       description: "As a Data Scientist and Machine Learning Engineer, I played a pivotal role in leveraging data to drive informed decision-making and enhance business processes. By developing and implementing advanced machine learning models and algorithms to analyze vast datasets, predict trends, and optimize financial strategies. Collaborating closely with database administrators, you will design and maintain robust data architectures, ensuring seamless integration and accessibility of data for analytical purposes.",
@@ -62,8 +72,8 @@ const Experience = () => {
       links: []
     },
     {
-      id: 4,
-      company: "AXSOS ACADEMY GMBH",
+      id: 5,
+      company: "AXSOS ACADEMY GMBH - Germany",
       role: "DATA SCIENCE AND MACHINE LEARNNG ENGINEER/TA",
       period: "AUG 2023 – PRESENT",
       description: "Start working on data science and machine learning with basic knowledge of NumPy, Pandas, MatPlotlib, Seaborn, Folium, scikit learn, XGBOOST, LightGBM, Keras, Tensorflow, SHAP, LIMA, Stats Model, Tableau Work on Brain Tumors Detection using open CV and Tensorflow with Keras and PyTorch and working in Advanced Machine learning using some Deep learning ANN like CNN and RNN.",
@@ -76,8 +86,8 @@ const Experience = () => {
       ]
     },
     {
-      id: 5,
-      company: "AXSOS ACADEMY GMBH",
+      id: 6,
+      company: "AXSOS ACADEMY GMBH - Germany",
       role: "FULLSTACK DEVELOPER/TEACHING ASSISTANT",
       period: "NOV 2022 – FEB 2024",
       description: "Full Stack Teaching Assistant. Assisting students with problem solving, different stacks, code review. Certified in Coding Dojo in MERN, Python (Django and Flask) stacks, and Java Spring boot stack. I worked a bit on development of the ALGOS LABS project for AXSOS Academy with a team of specialists in React TS, JAVA SPRING, Mongo, and Postgres database, and working on AI Sessions with some basic AI Apps.",
@@ -90,8 +100,8 @@ const Experience = () => {
       ]
     },
     {
-      id: 6,
-      company: "Exalt Technologies",
+      id: 7,
+      company: "Exalt Technologies - Palestine 🇵🇸",
       role: "FRONTEND DEVELOPMENT",
       period: "JULY 2022 – SEP 2022",
       description: "Html, CSS and JavaScript, firebase database, git, GitHub, AJAX, jQuery regex for validation and React JS, and create many applications with JSX, React State, React Events, Reducers, JSON web token, Hooks, React Styling, Fragments, Portals, Http Requests, Connecting Database, React Router, Single-Page Applications SPA, Deploying React Apps, Authentication, React Forms, Context API, Rest API, and some APIs.",
@@ -107,7 +117,7 @@ const Experience = () => {
       ]
     },
     {
-      id: 7,
+      id: 8,
       company: "ARAB AMERICAN UNIVERSITY",
       role: "SMART ADVISING SYSTEM",
       period: "SEP 2021 - JULY 2022",
@@ -126,8 +136,8 @@ const Experience = () => {
       ]
     },
     {
-      id: 8,
-      company: "TAP",
+      id: 9,
+      company: "TAP - Netherland",
       role: "PROFESSIONAL MENTOR",
       period: "OCT 2023 – PRESENT",
       description: "Start as a Part Time professional mentor in Software development program, leading sessions about Artificial Intellgence, Machine Learning, Data Science, Deep Learning, Computer vision.",
