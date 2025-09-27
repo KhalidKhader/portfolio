@@ -27,6 +27,12 @@ import IMG18 from "../../assets/me1A.png";
 import IMG19 from "../../assets/me2A.png";
 import IMG20 from "../../assets/IMG_4361.jpg";
 import IMG21 from "../../assets/IMG_4357.JPG";
+import IMG22 from "../../assets/2025 1.jpg";
+import IMG23 from "../../assets/2025 2.jpg";
+import IMG24 from "../../assets/2025 3.jpg";
+import IMG25 from "../../assets/2025 6.jpg";
+import IMG26 from "../../assets/2025 7.jpg";
+
 
 const Testimonials = () => {
   const theme = useTheme();
@@ -49,6 +55,12 @@ const Testimonials = () => {
     { img: IMG14, year: "2020" },
     { img: IMG18, year: "2022" },
     { img: IMG19, year: "2022" },
+    { img: IMG22, year: "2024" },
+    { img: IMG23, year: "2025" },
+    { img: IMG24, year: "2025" },
+    { img: IMG25, year: "2025" },
+    { img: IMG26, year: "2025" },
+    
   ];
 
   return (
