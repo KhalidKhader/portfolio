@@ -73,11 +73,11 @@ const Header = () => {
                   fontSize: { xs: '0.95rem', md: '1rem' }
                 }}
               >
-                I'm a Certified Azure AI Engineer with proven expertise in AI Agents, Generative AI, LLMs, Machine Learning, Deep Learning, and Data Engineering. Most of the
-                experience leading AI-driven healthcare, HR analytics, and cybersecurity projects across international teams in the USA, Canada, Germany, Jordan, and
-                Palestine. Former AI Production Team Lead at MENA DEVS, currently spearheading AI medical systems at MedidoHealth Solutions (USA) and consulting for
-                Bitlab/Instclinic (Canada). Skilled at AI consulting, enterprise deployment, and full-stack software engineering. Recognized speaker and trainer in AI and
-                deep learning with a strong record of research, publications, and curriculum development.
+                I'm a Certified Azure AI Engineer with expertise in AI Agents, Generative AI, LLMs, Machine Learning, Deep Learning, and Data Engineering. 
+                Experience leading AI-driven projects in healthcare, HR analytics, and cybersecurity across teams in the USA, Canada, Germany, Jordan, and Palestine. 
+                Former AI Production Team Lead at MENA DEVS, currently leading AI medical systems at MedidoHealth Solutions (USA) and consulting for Bitlab/Instclinic (Canada). 
+                Skilled in AI consulting, enterprise deployment, and full-stack software engineering, with a strong background in research, publications, and curriculum development 
+                as a recognized speaker and trainer in AI and deep learning.
               </Typography>
               
               <CTA />
