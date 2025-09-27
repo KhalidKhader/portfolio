@@ -60,7 +60,7 @@ const Header = () => {
                   fontWeight: 400
                 }}
               >
-                AI Engineering & Software Engineering Consultant
+                AI Engineer | Specialist | Consultant
               </Typography>
               
               <Typography 
