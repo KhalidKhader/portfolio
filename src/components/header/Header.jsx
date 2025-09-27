@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Container, Grid, useTheme, useMediaQuery } from '@mui/material';
-import ME1 from '../../assets/Khalid.png';
+import ME1 from '../../assets/Khalid-Khader.png';
 import CTA from './CTA';
 import HeaderSocial from './HeaderSocial';
 
