@@ -33,7 +33,7 @@ import IMG24 from "../../assets/2025 3.png";
 import IMG25 from "../../assets/2025 6.png";
 import IMG26 from "../../assets/2025 7.png";
 
-import IMG27 from "../../assets/2022 1.jpg";
+import IMG27 from "../../assets/2022 1.JPG";
 import IMG28 from "../../assets/2022 2.JPG";
 import IMG29 from "../../assets/2024 2.JPG";
 import IMG30 from "../../assets/2024 3.png";
