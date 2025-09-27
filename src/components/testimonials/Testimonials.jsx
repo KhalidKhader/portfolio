@@ -33,6 +33,14 @@ import IMG24 from "../../assets/2025 3.png";
 import IMG25 from "../../assets/2025 6.png";
 import IMG26 from "../../assets/2025 7.png";
 
+import IMG27 from "../../assets/2022 1.jpg";
+import IMG28 from "../../assets/2022 2.JPG";
+import IMG29 from "../../assets/2024 2.JPG";
+import IMG30 from "../../assets/2024 3.png";
+import IMG31 from "../../assets/2024 4.png";
+import IMG32 from "../../assets/2024 5.png";
+import IMG33 from "../../assets/2024 6.png";
+
 
 const Testimonials = () => {
   const theme = useTheme();
@@ -44,22 +52,29 @@ const Testimonials = () => {
     { img: IMG3, year: "2018" },
     { img: IMG4, year: "2022" },
     { img: IMG5, year: "2018" },
+    { img: IMG25, year: "2025" },
     { img: IMG6, year: "2016" },
     { img: IMG7, year: "2018" },
     { img: IMG8, year: "2015" },
+    { img: IMG24, year: "2025" },
     { img: IMG9, year: "2019" },
     { img: IMG10, year: "2020" },
     { img: IMG11, year: "2018" },
     { img: IMG12, year: "2020" },
+    { img: IMG23, year: "2025" },
     { img: IMG13, year: "2020" },
     { img: IMG14, year: "2020" },
     { img: IMG18, year: "2022" },
+    { img: IMG26, year: "2025" },
     { img: IMG19, year: "2022" },
     { img: IMG22, year: "2024" },
-    { img: IMG23, year: "2025" },
-    { img: IMG24, year: "2025" },
-    { img: IMG25, year: "2025" },
-    { img: IMG26, year: "2025" },
+    { img: IMG27, year: "2022" },
+    { img: IMG28, year: "2022" },
+    { img: IMG29, year: "2024" },
+    { img: IMG30, year: "2024" },
+    { img: IMG31, year: "2024" },
+    { img: IMG32, year: "2024" },
+    { img: IMG33, year: "2024" },
     
   ];
 
