@@ -28,10 +28,10 @@ import IMG19 from "../../assets/me2A.png";
 import IMG20 from "../../assets/IMG_4361.jpg";
 import IMG21 from "../../assets/IMG_4357.JPG";
 import IMG22 from "../../assets/2025 1.jpg";
-import IMG23 from "../../assets/2025 2.jpg";
-import IMG24 from "../../assets/2025 3.jpg";
-import IMG25 from "../../assets/2025 6.jpg";
-import IMG26 from "../../assets/2025 7.jpg";
+import IMG23 from "../../assets/2025 2.png";
+import IMG24 from "../../assets/2025 3.png";
+import IMG25 from "../../assets/2025 6.png";
+import IMG26 from "../../assets/2025 7.png";
 
 
 const Testimonials = () => {
