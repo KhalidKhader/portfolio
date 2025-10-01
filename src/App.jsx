@@ -39,7 +39,7 @@ const App = () => {
         <BrainTumors />
         
         {/* Testimonials */}
-        <Testimonials />
+        {/* <Testimonials /> */}
         
         {/* Contact */}
         <Contact />
