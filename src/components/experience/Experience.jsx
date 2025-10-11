@@ -40,7 +40,7 @@ const Experience = () => {
       company: "MedidoHealth - USA 🇺🇸",
       role: "AI Specialist",
       period: "July 2025 – PRESENT",
-      description: "Working on Pharmacy systems, by adding AI features using Vision Language Models, Graph RAG, Vertex AI, Google AI studio, and other AI systems for handwritten medical prescription recognition, triage, and patient identification projects for U.S. and Colombian clients.",
+      description: "Leading advanced AI initiatives focused on medical prescription recognition, triage automation, and patient identification for U.S. and Colombian healthcare clients. Developed intelligent pharmacy systems by integrating Vision-Language Models, Graph RAG, and Vertex AI, alongside Neo4j graph databases and FastAPI-based AI microservices. Implemented scalable, secure, and compliant architectures leveraging Google Cloud, AWS Bedrock, and OpenAI Studio for multilingual medical AI systems. Collaborated across full-stack, AI, and DevOps workflows, ensuring HIPAA/PIPEDA compliance, performance optimization, and production-grade deployment.",
       image: MedidoHealth,
       links: []
     },
