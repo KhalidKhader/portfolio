@@ -1,4 +1,3 @@
-// All necessary imports - DO NOT CHANGE
 import React from "react";
 import {
   Box,
@@ -77,7 +76,7 @@ import { VscRegex, VscGraph } from "react-icons/vsc";
 import { DiJava } from "react-icons/di";
 import { TbBrandCpp } from "react-icons/tb";
 
-// Helper functions
+// Helper function to get progress value based on skill level
 const getProgressValue = (level) => {
   switch (level) {
     case "Advanced":
@@ -91,6 +90,7 @@ const getProgressValue = (level) => {
   }
 };
 
+// Helper function to get skill level color
 const getLevelColor = (level, theme) => {
   switch (level) {
     case "Advanced":
@@ -104,187 +104,194 @@ const getLevelColor = (level, theme) => {
   }
 };
 
-// UPDATED SKILLS ARRAY - COMPREHENSIVE AND COMPLETE
-const skillCategories = [
-  {
-    id: "programming",
-    title: "Programming Languages",
-    icon: <GiComputing />,
-    skills: [
-      { name: "Python", icon: <FaPython />, level: "Advanced" },
-      { name: "JAVA", icon: <DiJava />, level: "Intermediate" },
-      { name: "Javascript", icon: <SiJavascript />, level: "Intermediate" },
-      { name: "C++", icon: <TbBrandCpp />, level: "Intermediate" },
-      { name: "C", icon: <GiComputing />, level: "Intermediate" },
-      { name: "HTML", icon: <ImHtmlFive />, level: "Intermediate" },
-      { name: "CSS", icon: <SiCss3 />, level: "Beginner" },
-      { name: "XML", icon: <GiComputing />, level: "Beginner" },
-      { name: "PL/SQL", icon: <SiOracle />, level: "Intermediate" },
-      { name: "Assembly", icon: <GiComputing />, level: "Intermediate" },
-      { name: "C#", icon: <GiComputing />, level: "Beginner" },
-      { name: "PHP", icon: <SiPhp />, level: "Beginner" },
-    ],
-  },
-  {
-    id: "ai-ml",
-    title: "Artificial Intelligence & Machine Learning",
-    icon: <FaBrain />,
-    skills: [
-      { name: "TensorFlow", icon: <SiTensorflow />, level: "Advanced" },
-      { name: "Keras", icon: <SiKeras />, level: "Advanced" },
-      { name: "PyTorch", icon: <SiPytorch />, level: "Advanced" },
-      { name: "OpenCV", icon: <SiOpencv />, level: "Advanced" },
-      { name: "Hugging Face", icon: <SiOpenai />, level: "Advanced" },
-      { name: "LangChain", icon: <FaLanguage />, level: "Advanced" },
-      { name: "LangGraph", icon: <FaLanguage />, level: "Intermediate" },
-      { name: "LangFuse", icon: <FaNetworkWired />, level: "Intermediate" },
-      { name: "SHAP & LIME", icon: <VscGraph />, level: "Intermediate" },
-      { name: "Whisper", icon: <SiOpenai />, level: "Intermediate" },
-      { name: "YOLO", icon: <SiOpencv />, level: "Advanced" },
-      { name: "DeepSeek", icon: <FaBrain />, level: "Intermediate" },
-    ],
-  },
-  {
-    id: "nlp-gen-ai",
-    title: "NLP & Generative AI",
-    icon: <FaRobot />,
-    skills: [
-      { name: "OpenAI Studio", icon: <SiOpenai />, level: "Advanced" },
-      { name: "Azure AI", icon: <SiMicrosoftazure />, level: "Intermediate" },
-      { name: "NLTK", icon: <FaLanguage />, level: "Intermediate" },
-      { name: "spaCy", icon: <FaLanguage />, level: "Intermediate" },
-      { name: "Transformers", icon: <FaBrain />, level: "Advanced" },
-      { name: "LLM Tuning", icon: <FaBrain />, level: "Advanced" },
-      { name: "Prompt Engineering", icon: <SiOpenai />, level: "Advanced" },
-      { name: "RAG Systems", icon: <FaDatabase />, level: "Advanced" },
-      { name: "Graph RAG", icon: <VscGraph />, level: "Advanced" },
-      { name: "GANs", icon: <FaBrain />, level: "Intermediate" },
-      { name: "Stable Diffusion", icon: <SiOpenai />, level: "Intermediate" },
-    ],
-  },
-  {
-    id: "cloud-ai",
-    title: "Cloud AI & Infrastructure",
-    icon: <FaCloud />,
-    skills: [
-      { name: "Google Cloud (GCP)", icon: <SiGooglecloud />, level: "Advanced" },
-      { name: "Vertex AI", icon: <SiGooglecloud />, level: "Advanced" },
-      { name: "Google AI Studio", icon: <SiGooglecloud />, level: "Advanced" },
-      { name: "AWS Bedrock", icon: <SiAmazonec2 />, level: "Intermediate" },
-      { name: "AWS S3", icon: <SiAmazons3 />, level: "Intermediate" },
-      { name: "AWS ECS", icon: <SiAmazonecs />, level: "Intermediate" },
-      { name: "AWS EC2", icon: <SiAmazonec2 />, level: "Intermediate" },
-      { name: "AWS SageMaker", icon: <SiAmazonec2 />, level: "Intermediate" },
-      { name: "Docker", icon: <FaDocker />, level: "Advanced" },
-      { name: "RunPod", icon: <FaDocker />, level: "Intermediate" },
-    ],
-  },
-  {
-    id: "datascience",
-    title: "Data Science and Analytics",
-    icon: <SiPython />,
-    skills: [
-      { name: "NumPy", icon: <SiNumpy />, level: "Advanced" },
-      { name: "Pandas", icon: <SiPandas />, level: "Advanced" },
-      { name: "Scikit-learn", icon: <SiScikitlearn />, level: "Advanced" },
-      { name: "Matplotlib", icon: <VscGraph />, level: "Advanced" },
-      { name: "Seaborn", icon: <VscGraph />, level: "Advanced" },
-      { name: "XGBoost", icon: <FaChartLine />, level: "Advanced" },
-      { name: "LightGBM", icon: <SiPython />, level: "Advanced" },
-      { name: "Plotly", icon: <SiPlotly />, level: "Advanced" },
-      { name: "Jupyter", icon: <SiJupyter />, level: "Advanced" },
-      { name: "Time Series Analysis", icon: <VscGraph />, level: "Intermediate" },
-    ],
-  },
-  {
-    id: "data-engineering",
-    title: "Data Engineering & ETL",
-    icon: <SiAzuredevops />,
-    skills: [
-      { name: "PySpark", icon: <FaPython />, level: "Intermediate" },
-      { name: "Databricks", icon: <SiDatabricks />, level: "Intermediate" },
-      { name: "Dask", icon: <FaPython />, level: "Intermediate" },
-      { name: "Apache Airflow", icon: <SiApacheairflow />, level: "Intermediate" },
-      { name: "Azure Data Factory", icon: <SiMicrosoftazure />, level: "Intermediate" },
-      { name: "AutoML", icon: <SiMicrosoftazure />, level: "Intermediate" },
-      { name: "Google Colab", icon: <SiGooglecolab />, level: "Advanced" },
-      { name: "Poetry", icon: <SiPoetry />, level: "Intermediate" },
-    ],
-  },
-  {
-    id: "frontend",
-    title: "Front-End Development",
-    icon: <FaReact />,
-    skills: [
-      { name: "React.js", icon: <FaReact />, level: "Intermediate" },
-      { name: "Angular", icon: <FaAngular />, level: "Beginner" },
-      { name: "HTML/CSS/JS", icon: <ImHtmlFive />, level: "Intermediate" },
-      { name: "AJAX", icon: <SiJavascript />, level: "Intermediate" },
-      { name: "Regex", icon: <VscRegex />, level: "Intermediate" },
-      { name: "jQuery", icon: <SiJavascript />, level: "Intermediate" },
-    ],
-  },
-  {
-    id: "backend",
-    title: "Back-End Development",
-    icon: <SiSpringboot />,
-    skills: [
-      { name: "FastAPI", icon: <SiFastapi />, level: "Advanced" },
-      { name: "Flask", icon: <SiFlask />, level: "Advanced" },
-      { name: "Django", icon: <SiDjango />, level: "Intermediate" },
-      { name: "ASP.NET Core", icon: <GiComputing />, level: "Intermediate" },
-      { name: "Express.js/Node.js", icon: <SiJavascript />, level: "Intermediate" },
-      { name: "Spring Boot", icon: <SiSpringboot />, level: "Intermediate" },
-      { name: "Oracle APEX", icon: <SiOracle />, level: "Intermediate" },
-      { name: "Laravel", icon: <SiLaravel />, level: "Beginner" },
-    ],
-  },
-  {
-    id: "databases",
-    title: "Databases & Graph Systems",
-    icon: <SiMysql />,
-    skills: [
-      { name: "Oracle SQL", icon: <SiOracle />, level: "Advanced" },
-      { name: "MySQL", icon: <SiMysql />, level: "Advanced" },
-      { name: "PostgreSQL", icon: <SiPostgresql />, level: "Intermediate" },
-      { name: "MSSQL", icon: <AiOutlineConsoleSql />, level: "Intermediate" },
-      { name: "MongoDB", icon: <SiMongodb />, level: "Intermediate" },
-      { name: "SQLite", icon: <SiSqlite />, level: "Intermediate" },
-      { name: "Neo4J", icon: <SiNeo4J />, level: "Advanced" },
-      { name: "Neo4j Graph ML", icon: <SiNeo4J />, level: "Intermediate" },
-      { name: "Firebase", icon: <SiFirebase />, level: "Intermediate" },
-      { name: "Redis", icon: <SiRedis />, level: "Intermediate" },
-    ],
-  },
-  {
-    id: "data-vis",
-    title: "Data Visualization & BI",
-    icon: <SiTableau />,
-    skills: [
-      { name: "Tableau", icon: <SiTableau />, level: "Advanced" },
-      { name: "Power BI", icon: <SiPowerbi />, level: "Advanced" },
-      { name: "Knime", icon: <VscGraph />, level: "Intermediate" },
-      { name: "Oracle APEX", icon: <SiOracle />, level: "Intermediate" },
-      { name: "Streamlit", icon: <SiStreamlit />, level: "Advanced" },
-      { name: "Plotly", icon: <SiPlotly />, level: "Advanced" },
-    ],
-  },
-  {
-    id: "security-devops",
-    title: "Security, DevOps & Compliance",
-    icon: <BsGithub />,
-    skills: [
-      { name: "HIPAA/PIPEDA Compliance", icon: <AiFillCheckCircle />, level: "Advanced" },
-      { name: "AES-256 Encryption", icon: <AiFillCheckCircle />, level: "Advanced" },
-      { name: "Docker Compose", icon: <SiDocker />, level: "Advanced" },
-      { name: "Git/GitHub", icon: <BsGithub />, level: "Advanced" },
-      { name: "Linux", icon: <FaLinux />, level: "Intermediate" },
-      { name: "Postman", icon: <SiPostman />, level: "Advanced" },
-      { name: "REST APIs", icon: <FaNetworkWired />, level: "Advanced" },
-      { name: "Bitbucket/JIRA", icon: <BsGithub />, level: "Intermediate" },
-    ],
-  },
-];
+const Skills = () => {
+  const theme = useTheme();
+
+  // Define skill categories
+  const skillCategories = [
+    {
+      id: "programming",
+      title: "Programming Languages",
+      icon: <GiComputing />,
+      skills: [
+        { name: "Python", icon: <FaPython />, level: "Advanced" },
+        { name: "JAVA", icon: <DiJava />, level: "Intermediate" },
+        { name: "Javascript", icon: <SiJavascript />, level: "Intermediate" },
+        { name: "C++", icon: <TbBrandCpp />, level: "Intermediate" },
+        { name: "C", icon: <GiComputing />, level: "Intermediate" },
+        { name: "HTML", icon: <ImHtmlFive />, level: "Intermediate" },
+        { name: "CSS", icon: <SiCss3 />, level: "Beginner" },
+        { name: "XML", icon: <GiComputing />, level: "Beginner" },
+        { name: "PL/SQL", icon: <SiOracle />, level: "Intermediate" },
+        { name: "Assembly", icon: <GiComputing />, level: "Intermediate" },
+        { name: "C#", icon: <GiComputing />, level: "Beginner" },
+        { name: "PHP", icon: <SiPhp />, level: "Beginner" },
+      ],
+    },
+    {
+      id: "ai-ml",
+      title: "Artificial Intelligence & Machine Learning",
+      icon: <FaBrain />,
+      skills: [
+        { name: "TensorFlow", icon: <SiTensorflow />, level: "Intermediate" },
+        { name: "Keras", icon: <SiKeras />, level: "Intermediate" },
+        { name: "PyTorch", icon: <SiPytorch />, level: "Intermediate" },
+        { name: "OpenCV", icon: <SiOpencv />, level: "Intermediate" },
+        { name: "Hugging Face", icon: <SiOpenai />, level: "Advanced" },
+        { name: "LangChain", icon: <FaLanguage />, level: "Advanced" },
+        { name: "LangGraph", icon: <FaLanguage />, level: "Intermediate" },
+        { name: "LangFuse", icon: <FaNetworkWired />, level: "Intermediate" },
+        { name: "SHAP & LIME", icon: <VscGraph />, level: "Intermediate" },
+        { name: "Whisper", icon: <SiOpenai />, level: "Intermediate" },
+        { name: "YOLO", icon: <SiOpencv />, level: "Intermediate" },
+        { name: "DeepSeek", icon: <FaBrain />, level: "Intermediate" },
+      ],
+    },
+     {
+      id: "databases",
+      title: "Databases & Graph Systems",
+      icon: <SiMysql />,
+      skills: [
+        { name: "Oracle SQL", icon: <SiOracle />, level: "Intermediate" },
+        { name: "MySQL", icon: <SiMysql />, level: "Advanced" },
+        { name: "PostgreSQL", icon: <SiPostgresql />, level: "Intermediate" },
+        { name: "MSSQL", icon: <AiOutlineConsoleSql />, level: "Intermediate" },
+        { name: "MongoDB", icon: <SiMongodb />, level: "Intermediate" },
+        { name: "SQLite", icon: <SiSqlite />, level: "Intermediate" },
+        { name: "Neo4J", icon: <SiNeo4J />, level: "Intermediate" },
+        { name: "Neo4j Graph ML", icon: <SiNeo4J />, level: "Intermediate" },
+        { name: "Cypher Queries", icon: <SiNeo4J />, level: "Intermediate" },
+        { name: "Firebase", icon: <SiFirebase />, level: "Intermediate" },
+        { name: "Redis", icon: <SiRedis />, level: "Intermediate" },
+      ],
+    },
+    {
+      id: "nlp-gen-ai",
+      title: "NLP & Generative AI",
+      icon: <FaRobot />,
+      skills: [
+        { name: "OpenAI Studio", icon: <SiOpenai />, level: "Advanced" },
+        { name: "Azure AI", icon: <SiMicrosoftazure />, level: "Intermediate" },
+        { name: "NLTK", icon: <FaLanguage />, level: "Intermediate" },
+        { name: "spaCy", icon: <FaLanguage />, level: "Intermediate" },
+        { name: "Transformers", icon: <FaBrain />, level: "Intermediate" },
+        { name: "LLM Tuning", icon: <FaBrain />, level: "Intermediate" },
+        { name: "Prompt Engineering", icon: <SiOpenai />, level: "Intermediate" },
+        { name: "RAG Systems", icon: <FaDatabase />, level: "Advanced" },
+        { name: "Graph RAG", icon: <VscGraph />, level: "Advanced" },
+        { name: "GANs", icon: <FaBrain />, level: "Intermediate" },
+        { name: "Stable Diffusion", icon: <SiOpenai />, level: "Intermediate" },
+      ],
+    },
+    {
+      id: "datascience",
+      title: "Data Science and Analytics",
+      icon: <SiPython />,
+      skills: [
+        { name: "NumPy", icon: <SiNumpy />, level: "Intermediate" },
+        { name: "Pandas", icon: <SiPandas />, level: "Advanced" },
+        { name: "Scikit-learn", icon: <SiScikitlearn />, level: "Advanced" },
+        { name: "Matplotlib", icon: <VscGraph />, level: "Intermediate" },
+        { name: "Seaborn", icon: <VscGraph />, level: "Intermediate" },
+        { name: "XGBoost", icon: <FaChartLine />, level: "Intermediate" },
+        { name: "LightGBM", icon: <SiPython />, level: "Intermediate" },
+        { name: "Jupyter", icon: <SiJupyter />, level: "Intermediate" },
+        { name: "Time Series Analysis", icon: <VscGraph />, level: "Intermediate" },
+      ],
+    },
+    
+    {
+      id: "cloud-ai",
+      title: "Cloud AI & Infrastructure",
+      icon: <FaCloud />,
+      skills: [
+        { name: "Google Cloud (GCP)", icon: <SiGooglecloud />, level: "Intermediate" },
+        { name: "Vertex AI", icon: <SiGooglecloud />, level: "Advanced" },
+        { name: "Google AI Studio", icon: <SiGooglecloud />, level: "Advanced" },
+        { name: "AWS Bedrock", icon: <SiAmazonec2 />, level: "Intermediate" },
+        { name: "AWS S3", icon: <SiAmazons3 />, level: "Intermediate" },
+        { name: "AWS ECS", icon: <SiAmazonecs />, level: "Intermediate" },
+        { name: "AWS EC2", icon: <SiAmazonec2 />, level: "Intermediate" },
+        { name: "AWS SageMaker", icon: <SiAmazonec2 />, level: "Intermediate" },
+        { name: "Azure AI", icon: <SiMicrosoftazure />, level: "Intermediate" },
+        
+      ],
+    },
+    
+    {
+      id: "data-engineering",
+      title: "Data Engineering & ETL",
+      icon: <SiAzuredevops />,
+      skills: [
+        { name: "PySpark", icon: <FaPython />, level: "Intermediate" },
+        { name: "Databricks", icon: <SiDatabricks />, level: "Intermediate" },
+        { name: "Dask", icon: <FaPython />, level: "Intermediate" },
+        { name: "Apache Airflow", icon: <SiApacheairflow />, level: "Intermediate" },
+        { name: "Azure Data Factory", icon: <SiMicrosoftazure />, level: "Intermediate" },
+        { name: "AutoML", icon: <SiMicrosoftazure />, level: "Intermediate" },
+        { name: "Google Colab", icon: <SiGooglecolab />, level: "Advanced" },
+        { name: "Poetry", icon: <SiPoetry />, level: "Intermediate" },
+      ],
+    },
+    {
+      id: "frontend",
+      title: "Front-End Development",
+      icon: <FaReact />,
+      skills: [
+        { name: "React.js", icon: <FaReact />, level: "Intermediate" },
+        { name: "Angular", icon: <FaAngular />, level: "Beginner" },
+        { name: "HTML/CSS/JS", icon: <ImHtmlFive />, level: "Intermediate" },
+        { name: "AJAX", icon: <SiJavascript />, level: "Intermediate" },
+        { name: "Regex", icon: <VscRegex />, level: "Intermediate" },
+        { name: "jQuery", icon: <SiJavascript />, level: "Intermediate" },
+      ],
+    },
+    {
+      id: "backend",
+      title: "Back-End Development",
+      icon: <SiSpringboot />,
+      skills: [
+        { name: "FastAPI", icon: <SiFastapi />, level: "Intermediate" },
+        { name: "Flask", icon: <SiFlask />, level: "Intermediate" },
+        { name: "Django", icon: <SiDjango />, level: "Intermediate" },
+        { name: "ASP.NET Core", icon: <GiComputing />, level: "Intermediate" },
+        { name: "Express.js/Node.js", icon: <SiJavascript />, level: "Intermediate" },
+        { name: "Spring Boot", icon: <SiSpringboot />, level: "Intermediate" },
+        { name: "Oracle APEX", icon: <SiOracle />, level: "Intermediate" },
+        { name: "Laravel", icon: <SiLaravel />, level: "Beginner" },
+      ],
+    },
+   
+    {
+      id: "data-vis",
+      title: "Data Visualization & BI",
+      icon: <SiTableau />,
+      skills: [
+        { name: "Tableau", icon: <SiTableau />, level: "Intermediate" },
+        { name: "Power BI", icon: <SiPowerbi />, level: "Intermediate" },
+        { name: "Knime", icon: <VscGraph />, level: "Intermediate" },
+        { name: "Oracle APEX", icon: <SiOracle />, level: "Intermediate" },
+        { name: "Streamlit", icon: <SiStreamlit />, level: "Intermediate" },
+        { name: "Plotly", icon: <SiPlotly />, level: "Intermediate" },
+      ],
+    },
+    {
+      id: "security-devops",
+      title: "Security, DevOps & Compliance",
+      icon: <BsGithub />,
+      skills: [
+        { name: "HIPAA/PIPEDA Compliance", icon: <AiFillCheckCircle />, level: "Intermediate" },
+        { name: "AES-256 Encryption", icon: <AiFillCheckCircle />, level: "Intermediate" },
+        { name: "Docker", icon: <FaDocker />, level: "Intermediate" },
+        { name: "Git/GitHub", icon: <BsGithub />, level: "Intermediate" },
+        { name: "Linux", icon: <FaLinux />, level: "Intermediate" },
+        { name: "Postman", icon: <SiPostman />, level: "Intermediate" },
+        { name: "REST APIs", icon: <FaNetworkWired />, level: "Intermediate" },
+        { name: "Bitbucket/JIRA", icon: <BsGithub />, level: "Intermediate" },
+      ],
+    },
+   
+  ];
 
   return (
     <Box
