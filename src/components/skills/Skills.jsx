@@ -4,8 +4,6 @@ import {
   Typography,
   Container,
   Grid,
-  Paper,
-  Tooltip,
   Chip,
   Divider,
   LinearProgress,
@@ -20,7 +18,6 @@ import { ImHtmlFive } from "react-icons/im";
 import {
   AiFillCheckCircle,
   AiOutlineConsoleSql,
-  AiOutlinePartition,
 } from "react-icons/ai";
 import {
   SiJavascript,
@@ -32,7 +29,6 @@ import {
   SiSpringboot,
   SiFlask,
   SiDjango,
-  SiLaravel,
   SiPhp,
   SiPostgresql,
   SiSqlite,
@@ -46,11 +42,9 @@ import {
   SiPlotly,
   SiOpencv,
   SiDocker,
-  SiMacos,
   SiPostman,
   SiGooglecolab,
   SiJupyter,
-  SiWebpack,
   SiAzuredevops,
   SiPytorch,
   SiPowerbi,
@@ -106,8 +100,8 @@ const Skills = () => {
         { name: "LangChain", icon: <FaLanguage />, level: "Advanced" },
         { name: "LangGraph", icon: <FaLanguage />, level: "Intermediate" },
         { name: "LangFuse", icon: <FaNetworkWired />, level: "Intermediate" },
-        { name: "Neo4j Graph ML", icon: <FaDatabase />, level: "Intermediate" },
-        { name: "RAG Systems", icon: <FaDatabase />, level: "Advanced" },
+        { name: "Graph RAG", icon: <FaDatabase />, level: "Advanced" },
+        { name: "Neo4j Graph ML", icon: <SiNeo4J />, level: "Intermediate" },
         { name: "FastAPI AI APIs", icon: <SiFastapi />, level: "Advanced" },
       ],
     },
@@ -117,7 +111,8 @@ const Skills = () => {
       icon: <FaCloud />,
       skills: [
         { name: "Google Cloud (GCP)", icon: <SiGooglecloud />, level: "Advanced" },
-        { name: "Vertex AI", icon: <SiGooglecloud />, level: "Intermediate" },
+        { name: "Vertex AI", icon: <SiGooglecloud />, level: "Advanced" },
+        { name: "OpenAI Studio", icon: <SiOpenai />, level: "Advanced" },
         { name: "AWS Bedrock", icon: <SiAmazonec2 />, level: "Intermediate" },
         { name: "AWS S3", icon: <SiAmazons3 />, level: "Intermediate" },
         { name: "AWS ECS", icon: <SiAmazonecs />, level: "Intermediate" },
@@ -125,7 +120,6 @@ const Skills = () => {
         { name: "AWS SageMaker", icon: <SiAmazonec2 />, level: "Intermediate" },
         { name: "Redis Caching", icon: <SiRedis />, level: "Intermediate" },
         { name: "Docker", icon: <FaDocker />, level: "Advanced" },
-        { name: "Poetry", icon: <SiPoetry />, level: "Intermediate" },
       ],
     },
     {
@@ -137,8 +131,23 @@ const Skills = () => {
         { name: "Flask", icon: <SiFlask />, level: "Advanced" },
         { name: "Spring Boot", icon: <SiSpringboot />, level: "Intermediate" },
         { name: "Django", icon: <SiDjango />, level: "Intermediate" },
-        { name: "Neo4j", icon: <FaDatabase />, level: "Intermediate" },
+        { name: "Neo4j", icon: <SiNeo4J />, level: "Intermediate" },
         { name: "Redis", icon: <SiRedis />, level: "Intermediate" },
+      ],
+    },
+    {
+      id: "data-ai",
+      title: "Data Science & Analytics",
+      icon: <SiPython />,
+      skills: [
+        { name: "Pandas", icon: <SiPandas />, level: "Advanced" },
+        { name: "NumPy", icon: <SiNumpy />, level: "Advanced" },
+        { name: "Scikit-learn", icon: <SiScikitlearn />, level: "Advanced" },
+        { name: "Matplotlib", icon: <VscGraph />, level: "Advanced" },
+        { name: "Plotly", icon: <SiPlotly />, level: "Advanced" },
+        { name: "XGBoost", icon: <FaChartLine />, level: "Advanced" },
+        { name: "Streamlit", icon: <SiStreamlit />, level: "Advanced" },
+        { name: "Databricks", icon: <SiDatabricks />, level: "Intermediate" },
       ],
     },
     {
@@ -148,10 +157,10 @@ const Skills = () => {
       skills: [
         { name: "HIPAA/PIPEDA Compliance", icon: <AiFillCheckCircle />, level: "Advanced" },
         { name: "AES-256 Encryption", icon: <AiFillCheckCircle />, level: "Advanced" },
-        { name: "Docker Compose", icon: <SiDocker />, level: "Advanced" },
         { name: "Git/GitHub", icon: <BsGithub />, level: "Advanced" },
         { name: "Linux", icon: <FaLinux />, level: "Intermediate" },
         { name: "Postman", icon: <SiPostman />, level: "Advanced" },
+        { name: "Docker Compose", icon: <SiDocker />, level: "Advanced" },
       ],
     },
   ];
@@ -190,27 +199,28 @@ const Skills = () => {
         <Grid container spacing={4}>
           {skillCategories.map((category) => (
             <Grid item xs={12} md={6} key={category.id}>
-              <Card elevation={3} sx={{
-                height: '100%',
-                borderRadius: '15px',
-                backgroundColor: alpha(theme.palette.background.paper, 0.7),
-                border: '1px solid',
-                borderColor: 'rgba(100, 255, 218, 0.1)',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: '0 15px 30px rgba(0, 0, 0, 0.2)',
-                  borderColor: 'primary.main'
-                }
-              }}>
+              <Card
+                elevation={3}
+                sx={{
+                  height: '100%',
+                  borderRadius: '15px',
+                  backgroundColor: alpha(theme.palette.background.paper, 0.7),
+                  border: '1px solid',
+                  borderColor: 'rgba(100, 255, 218, 0.1)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 15px 30px rgba(0, 0, 0, 0.2)',
+                    borderColor: 'primary.main'
+                  }
+                }}
+              >
                 <CardHeader
-                  avatar={<Avatar sx={{ bgcolor: 'rgba(100, 255, 218, 0.2)', color: 'primary.main', fontSize: '1.5rem' }}>{category.icon}</Avatar>}
-                  title={<Typography variant="h5" component="h3" fontWeight={600} color="text.primary">{category.title}</Typography>}
-                  sx={{ pb: 1 }}
+                  avatar={<Avatar sx={{ bgcolor: 'rgba(100,255,218,0.2)', color: 'primary.main' }}>{category.icon}</Avatar>}
+                  title={<Typography variant="h5" component="h3" fontWeight={600}>{category.title}</Typography>}
                 />
                 <Divider sx={{ mx: 2, borderColor: 'rgba(100, 255, 218, 0.1)' }} />
-                <CardContent sx={{ pt: 2 }}>
+                <CardContent>
                   <Grid container spacing={2}>
                     {category.skills.map((skill, index) => (
                       <Grid item xs={12} key={index}>
@@ -218,7 +228,7 @@ const Skills = () => {
                           <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                             <Box sx={{ mr: 1.5, color: theme.palette.primary.main, fontSize: '1.3rem' }}>{skill.icon}</Box>
                             <Typography variant="body1" sx={{ flexGrow: 1 }}>{skill.name}</Typography>
-                            <Chip label={skill.level} size="small" sx={{ fontSize: '0.7rem', bgcolor: 'rgba(100, 255, 218, 0.1)', color: theme.palette.primary.main, fontWeight: 500 }} />
+                            <Chip label={skill.level} size="small" sx={{ fontSize: '0.7rem', bgcolor: 'rgba(100,255,218,0.1)', color: theme.palette.primary.main }} />
                           </Box>
                           <LinearProgress variant="determinate" value={skill.level === "Advanced" ? 90 : skill.level === "Intermediate" ? 70 : 40} sx={{ height: 6, borderRadius: 5, mb: 2 }} />
                         </Box>
