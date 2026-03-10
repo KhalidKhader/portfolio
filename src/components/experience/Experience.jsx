@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Typography,
@@ -17,7 +17,7 @@ import {
   Stack,
   Avatar
 } from "@mui/material";
-import { FaLinkedin, FaFacebook, FaExternalLinkAlt, FaDownload } from "react-icons/fa";
+import { FaLinkedin, FaFacebook, FaExternalLinkAlt, FaDownload, FaRobot } from "react-icons/fa";
 import Report from "../../assets/MyInternshipreport.docx";
 import tap from "../../assets/tap.jpeg";
 import axsos from "../../assets/axsos.png";
@@ -32,6 +32,17 @@ import MedidoHealth from "../../assets/Medido.png";
 
 const Experience = () => {
   const theme = useTheme();
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.05 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   // Experience data
   const experiences = [
@@ -42,6 +53,16 @@ const Experience = () => {
       period: "July 2025 – PRESENT",
       description: "Leading advanced AI initiatives focused on medical prescription recognition, triage automation, and patient identification for U.S. and Colombian healthcare clients. Developed intelligent pharmacy systems by integrating Vision-Language Models, Graph RAG, and Vertex AI, alongside Neo4j graph databases and FastAPI-based AI microservices. Implemented scalable, secure, and compliant architectures leveraging Google Cloud, AWS Bedrock, and OpenAI Studio for multilingual medical AI systems. Collaborated across full-stack, AI, and DevOps workflows, ensuring HIPAA/PIPEDA compliance, performance optimization, and production-grade deployment.",
       image: MedidoHealth,
+      links: []
+    },
+      {
+      id: 3.5,
+      company: "TEIA - Germany 🇩🇪 - Switzerland 🇨🇭",
+      role: "AI Engineer & Machine Learning Researcher",
+      period: "2023 – 2025",
+      description: "Worked as an AI Engineer and Machine Learning Researcher at TEIA, contributing to R&D projects focused on AI-powered solutions for healthcare, intelligent systems, and data-driven applications. Developed computer vision models for medical image analysis, implemented NLP pipelines, and collaborated on brain tumor detection research that led to a published IEEE paper (2025). Spearheaded AI product prototyping and integration with cloud-based ML deployment pipelines.",
+      image: manara,
+      badge: "Research",
       links: []
     },
     {
@@ -148,6 +169,15 @@ const Experience = () => {
           url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7134841966789316608"
         }
       ]
+    },
+    {
+      id: 10,
+      company: "Knowledge - Palestine 🇵🇸",
+      role: "AI & Technology Educator",
+      period: "2023 – 2024",
+      description: "Delivered specialized training sessions on Artificial Intelligence, Machine Learning, and Data Science to professionals and students under the Knowledge platform. Designed and executed hands-on workshops on Python, scikit-learn, TensorFlow, and practical ML deployment, helping participants build production-level AI skills.",
+      image: knowledge,
+      links: []
     }
   ];
 
@@ -205,16 +235,53 @@ const Experience = () => {
     <Box
       component="section"
       id="experience"
+      ref={sectionRef}
       sx={{
         py: { xs: 8, md: 10 },
-        backgroundColor: 'background.default'
+        backgroundColor: 'background.default',
+        position: 'relative',
+        overflow: 'hidden',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: '20%',
+          right: '-8%',
+          width: '500px',
+          height: '500px',
+          borderRadius: '50%',
+          background: `radial-gradient(circle, ${alpha(theme.palette.primary.main, 0.04)} 0%, transparent 70%)`,
+          pointerEvents: 'none',
+        },
       }}
     >
       <Container>
-        <Box sx={{ textAlign: "center", mb: 6 }}>
-          <Typography variant="subtitle1" color="text.secondary" gutterBottom>
-            What Experience I Have
-          </Typography>
+        <Box
+          sx={{
+            textAlign: "center",
+            mb: 8,
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(30px)',
+            transition: 'opacity 0.7s ease, transform 0.7s ease',
+          }}
+        >
+          <Box
+            sx={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 1,
+              px: 2.5,
+              py: 0.75,
+              borderRadius: '20px',
+              backgroundColor: alpha(theme.palette.primary.main, 0.08),
+              border: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
+              mb: 3,
+            }}
+          >
+            <FaRobot style={{ color: theme.palette.primary.main, fontSize: '0.9rem' }} />
+            <Typography variant="subtitle2" color="primary.main" fontWeight={600}>
+              Professional Journey
+            </Typography>
+          </Box>
           <Typography
             variant="h2"
             component="h2"
@@ -226,12 +293,13 @@ const Experience = () => {
               '&::after': {
                 content: '""',
                 position: 'absolute',
-                bottom: '-10px',
+                bottom: '-12px',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 width: '80px',
                 height: '3px',
-                backgroundColor: 'primary.main'
+                background: `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                borderRadius: '2px',
               }
             }}
           >
@@ -240,120 +308,162 @@ const Experience = () => {
         </Box>
 
         <Grid container spacing={4}>
-          {experiences.map((exp) => (
+          {experiences.map((exp, index) => (
             <Grid item xs={12} key={exp.id}>
-              <Card
-                elevation={3}
+              <Box
                 sx={{
-                  borderRadius: '15px',
-                  backgroundColor: alpha(theme.palette.background.paper, 0.7),
-                  overflow: 'hidden',
-                  transition: 'all 0.3s ease',
-                  border: '1px solid',
-                  borderColor: 'rgba(100, 255, 218, 0.1)',
-                  '&:hover': {
-                    transform: 'translateY(-5px)',
-                    boxShadow: '0 15px 30px rgba(0, 0, 0, 0.2)',
-                    borderColor: 'primary.main'
-                  }
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? 'translateX(0)' : index % 2 === 0 ? 'translateX(-40px)' : 'translateX(40px)',
+                  transition: `opacity 0.6s ease ${index * 0.08}s, transform 0.6s ease ${index * 0.08}s`,
                 }}
               >
-                <CardContent sx={{ p: 4 }}>
+              <Card
+                elevation={0}
+                sx={{
+                  borderRadius: '18px',
+                  background: `linear-gradient(135deg, ${alpha(theme.palette.background.paper, 0.9)} 0%, ${alpha(theme.palette.secondary.light, 0.2)} 100%)`,
+                  overflow: 'hidden',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  border: '1px solid',
+                  borderColor: alpha(theme.palette.primary.main, 0.1),
+                  position: 'relative',
+                  '&:hover': {
+                    transform: 'translateY(-6px)',
+                    boxShadow: `0 20px 50px ${alpha(theme.palette.primary.main, 0.12)}`,
+                    borderColor: alpha(theme.palette.primary.main, 0.4),
+                    '& .exp-logo': {
+                      transform: 'scale(1.05)',
+                    },
+                  },
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: '3px',
+                    background: `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                    opacity: 0,
+                    transition: 'opacity 0.4s ease',
+                  },
+                  '&:hover::before': {
+                    opacity: 1,
+                  },
+                }}
+              >
+                <CardContent sx={{ p: { xs: 3, md: 4 } }}>
                   <Grid container spacing={4} alignItems="flex-start">
                     <Grid item xs={12} md={3} sx={{ textAlign: 'center' }}>
-                      <Box sx={{ position: 'relative', height: 180, mb: 3, overflow: 'hidden', borderRadius: '10px' }}>
+                      <Box
+                        sx={{
+                          position: 'relative',
+                          height: 160,
+                          mb: 2,
+                          overflow: 'hidden',
+                          borderRadius: '12px',
+                          border: `1px solid ${alpha(theme.palette.primary.main, 0.15)}`,
+                          backgroundColor: 'white',
+                        }}
+                      >
                         <CardMedia
+                          className="exp-logo"
                           component="img"
                           image={exp.image}
                           alt={exp.company}
                           sx={{
                             height: '100%',
                             objectFit: 'contain',
-                            backgroundColor: 'white',
                             p: 2,
-                            transition: 'transform 0.6s ease',
-                            border: '1px solid',
-                            borderColor: 'rgba(100, 255, 218, 0.1)',
-                            borderRadius: '10px'
+                            transition: 'transform 0.4s ease',
                           }}
                         />
                       </Box>
-                      <Chip 
+                      <Chip
                         label={exp.period}
                         color="primary"
                         variant="outlined"
-                        sx={{ 
-                          fontSize: '0.85rem',
-                          mt: 1,
-                          fontWeight: 500
+                        size="small"
+                        sx={{
+                          fontSize: '0.75rem',
+                          fontWeight: 600,
+                          borderColor: alpha(theme.palette.primary.main, 0.5),
+                          backgroundColor: alpha(theme.palette.primary.main, 0.06),
                         }}
                       />
+                      {exp.badge && (
+                        <Box sx={{ mt: 1 }}>
+                          <Chip
+                            label={exp.badge}
+                            size="small"
+                            sx={{
+                              fontSize: '0.7rem',
+                              fontWeight: 700,
+                              backgroundColor: alpha('#a78bfa', 0.15),
+                              color: '#a78bfa',
+                              border: `1px solid ${alpha('#a78bfa', 0.3)}`,
+                            }}
+                          />
+                        </Box>
+                      )}
                     </Grid>
-                    
+
                     <Grid item xs={12} md={9}>
-                      <Typography 
-                        variant="h4" 
-                        component="h2" 
+                      <Typography
+                        variant="h5"
+                        component="h2"
                         color="primary.main"
-                        fontWeight={600}
-                        sx={{ mb: 1 }}
+                        fontWeight={700}
+                        sx={{ mb: 0.5, fontSize: { xs: '1.1rem', md: '1.3rem' } }}
                       >
                         {exp.company}
                       </Typography>
-                      
-                      <Typography 
-                        variant="h5" 
+
+                      <Typography
+                        variant="h6"
                         component="h3"
-                        color="text.primary" 
+                        color="text.primary"
                         fontWeight={500}
-                        sx={{ mb: 3 }}
+                        sx={{ mb: 2.5, fontSize: { xs: '0.95rem', md: '1.1rem' }, opacity: 0.85 }}
                       >
                         {exp.role}
                       </Typography>
-                      
-                      <Typography 
-                        variant="body1" 
+
+                      <Typography
+                        variant="body2"
                         color="text.secondary"
-                        sx={{ mb: 3, lineHeight: 1.8 }}
+                        sx={{ mb: 3, lineHeight: 1.9, fontSize: '0.92rem' }}
                       >
                         {exp.description}
                       </Typography>
-                      
+
                       {exp.additionalRole && (
                         <>
-                          <Typography 
-                            variant="h6" 
-                            component="h4" 
+                          <Divider sx={{ mb: 2, borderColor: alpha(theme.palette.primary.main, 0.1) }} />
+                          <Typography
+                            variant="subtitle2"
                             color="text.primary"
-                            fontWeight={500}
-                            sx={{ mt: 4, mb: 1 }}
+                            fontWeight={600}
+                            sx={{ mt: 2, mb: 1 }}
                           >
                             {exp.additionalRole}
                           </Typography>
-                          <Typography 
-                            variant="body1" 
+                          <Typography
+                            variant="body2"
                             color="text.secondary"
-                            sx={{ mb: 3, lineHeight: 1.8 }}
+                            sx={{ mb: 3, lineHeight: 1.9 }}
                           >
                             {exp.additionalDescription}
                           </Typography>
                         </>
                       )}
-                      
+
                       {exp.links.length > 0 && (
                         <Box sx={{ mt: 3 }}>
-                          <Divider sx={{ mb: 3, borderColor: 'rgba(100, 255, 218, 0.2)' }} />
-                          <Box 
-                            sx={{ 
-                              display: 'flex',
-                              flexDirection: 'column',
-                              alignItems: 'flex-start',
-                              width: '100%'
-                            }}
-                          >
-                            {exp.links.map((link, index) => (
-                              <Box key={index} sx={{ width: '100%' }}>
-                                {renderLink(link, index, exp.company)}
+                          <Divider sx={{ mb: 3, borderColor: alpha(theme.palette.primary.main, 0.1) }} />
+                          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '100%' }}>
+                            {exp.links.map((link, idx) => (
+                              <Box key={idx} sx={{ width: '100%' }}>
+                                {renderLink(link, idx, exp.company)}
                               </Box>
                             ))}
                           </Box>
@@ -363,6 +473,7 @@ const Experience = () => {
                   </Grid>
                 </CardContent>
               </Card>
+              </Box>
             </Grid>
           ))}
         </Grid>

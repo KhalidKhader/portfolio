@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { 
   Box, 
   Typography, 
@@ -13,6 +13,7 @@ import {
   Divider
 } from '@mui/material';
 import { FaGraduationCap, FaUniversity, FaCalendarAlt } from 'react-icons/fa';
+import { MdOutlineCastForEducation } from 'react-icons/md';
 import dojo from '../../assets/dojo.svg';
 import bzu from '../../assets/bzu.png';
 import aaup from '../../assets/aaup.png';
@@ -22,6 +23,17 @@ import datacamp from '../../assets/datacamp.png';
 import udemy from '../../assets/udemy.png';
 const Education = () => {
   const theme = useTheme();
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   // Education data
   const educationData = [
@@ -102,21 +114,43 @@ const Education = () => {
   return (
     <Box 
       component="section" 
-      id="education" 
+      id="education"
+      ref={sectionRef}
       sx={{ 
         py: { xs: 8, md: 10 },
-        backgroundColor: 'background.default'
+        backgroundColor: 'background.default',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
       <Container>
-        <Box sx={{ textAlign: 'center', mb: 6 }}>
-          <Typography 
-            variant="subtitle1" 
-            color="text.secondary" 
-            gutterBottom
+        <Box
+          sx={{
+            textAlign: 'center',
+            mb: 8,
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(30px)',
+            transition: 'opacity 0.7s ease, transform 0.7s ease',
+          }}
+        >
+          <Box
+            sx={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 1,
+              px: 2.5,
+              py: 0.75,
+              borderRadius: '20px',
+              backgroundColor: alpha(theme.palette.primary.main, 0.08),
+              border: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
+              mb: 3,
+            }}
           >
-            What I Learned?
-          </Typography>
+            <MdOutlineCastForEducation style={{ color: theme.palette.primary.main, fontSize: '1rem' }} />
+            <Typography variant="subtitle2" color="primary.main" fontWeight={600}>
+              Academic Journey
+            </Typography>
+          </Box>
           <Typography 
             variant="h2" 
             component="h2" 
@@ -128,12 +162,13 @@ const Education = () => {
               '&::after': {
                 content: '""',
                 position: 'absolute',
-                bottom: '-10px',
+                bottom: '-12px',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 width: '80px',
                 height: '3px',
-                backgroundColor: 'primary.main'
+                background: `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                borderRadius: '2px',
               }
             }}
           >
@@ -141,27 +176,42 @@ const Education = () => {
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
-          {educationData.map((edu) => (
+        <Grid container spacing={3}>
+          {educationData.map((edu, index) => (
             <Grid item xs={12} sm={6} md={3} key={edu.id}>
-              <Card
-                elevation={3}
+              <Box
                 sx={{
                   height: '100%',
-                  borderRadius: '15px',
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.95)',
+                  transition: `opacity 0.6s ease ${index * 0.07}s, transform 0.6s ease ${index * 0.07}s`,
+                }}
+              >
+              <Card
+                elevation={0}
+                sx={{
+                  height: '100%',
+                  borderRadius: '18px',
                   overflow: 'hidden',
-                  transition: 'all 0.3s ease',
-                  backgroundColor: alpha(theme.palette.background.paper, 0.7),
-                  border: '1px solid',
-                  borderColor: 'rgba(100, 255, 218, 0.1)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  background: `linear-gradient(135deg, ${alpha(theme.palette.background.paper, 0.9)} 0%, ${alpha(theme.palette.secondary.light, 0.2)} 100%)`,
+                  border: `1px solid ${alpha(theme.palette.primary.main, 0.1)}`,
+                  position: 'relative',
                   '&:hover': {
                     transform: 'translateY(-8px)',
-                    boxShadow: '0 15px 30px rgba(0, 0, 0, 0.2)',
-                    borderColor: 'primary.main',
-                    '& .MuiCardMedia-root': {
-                      transform: 'scale(1.05)'
-                    }
-                  }
+                    boxShadow: `0 20px 50px ${alpha(theme.palette.primary.main, 0.12)}`,
+                    borderColor: alpha(theme.palette.primary.main, 0.4),
+                  },
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0, left: 0, right: 0,
+                    height: '3px',
+                    background: `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                    opacity: 0,
+                    transition: 'opacity 0.4s ease',
+                  },
+                  '&:hover::before': { opacity: 1 },
                 }}
               >
                 <Box sx={{ p: 3, textAlign: 'center' }}>
@@ -251,6 +301,7 @@ const Education = () => {
                   />
                 </CardContent>
               </Card>
+              </Box>
             </Grid>
           ))}
         </Grid>

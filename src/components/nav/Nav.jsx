@@ -3,6 +3,7 @@ import { Box, IconButton, Tooltip, useScrollTrigger, Zoom, AppBar, Container } f
 import { AiOutlineHome, AiOutlineUser, AiOutlineFolderOpen, AiOutlineMessage } from 'react-icons/ai';
 import { BiBook } from 'react-icons/bi';
 import { RiServiceLine } from 'react-icons/ri';
+import { MdScience } from 'react-icons/md';
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState('#home');
@@ -33,6 +34,7 @@ const Nav = () => {
     { href: '#home', icon: <AiOutlineHome />, label: 'Home' },
     { href: '#about', icon: <AiOutlineUser />, label: 'About' },
     { href: '#experience', icon: <BiBook />, label: 'Experience' },
+    { href: '#publications', icon: <MdScience />, label: 'Publications' },
     { href: '#portfolio', icon: <AiOutlineFolderOpen />, label: 'Portfolio' },
     { href: '#contact', icon: <AiOutlineMessage />, label: 'Contact' }
   ];

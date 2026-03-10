@@ -17,7 +17,7 @@ import {
   alpha,
   Paper
 } from "@mui/material";
-import { MdOutlineMarkEmailRead, MdSend } from "react-icons/md";
+import { MdOutlineMarkEmailRead, MdSend, MdAddCall } from "react-icons/md";
 import { SiMessenger } from "react-icons/si";
 import { ImWhatsapp } from "react-icons/im";
 import emailjs from 'emailjs-com';
@@ -97,9 +97,17 @@ const Contact = () => {
       id: 3,
       icon: <ImWhatsapp />,
       title: "WhatsApp",
-      value: "+972568807701",
-      link: "https://wa.me/972568807701",
+      value: "+970568807701",
+      link: "https://wa.me/970568807701",
       buttonText: "Send a Message"
+    },
+    {
+      id: 4,
+      icon: <MdAddCall />,
+      title: "Phone",
+      value: "+970568807701",
+      link: "0568669955",
+      buttonText: "Call me or send a Message"
     }
   ];
 

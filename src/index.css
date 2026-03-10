@@ -109,3 +109,102 @@ img{
         margin-top: 2rem;
     }
 }
+
+/* ============================================================
+   GLOBAL ANIMATION UTILITIES
+   ============================================================ */
+
+/* Fade in from below */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade in from left */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade in from right */
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Gentle float */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* Slow rotation */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Shimmer sweep */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Gradient border glow */
+@keyframes borderGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(100,255,218,0.2); }
+  50%       { box-shadow: 0 0 25px rgba(100,255,218,0.5), 0 0 50px rgba(100,255,218,0.15); }
+}
+
+/* Pulse dot */
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.7; }
+}
+
+/* Blink cursor */
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Slide down */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll indicator bounce */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+/* Gradient text animation */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Stagger utility classes */
+.animate-delay-1 { animation-delay: 0.1s !important; }
+.animate-delay-2 { animation-delay: 0.2s !important; }
+.animate-delay-3 { animation-delay: 0.3s !important; }
+.animate-delay-4 { animation-delay: 0.4s !important; }
+.animate-delay-5 { animation-delay: 0.5s !important; }
+
+/* Smooth scroll enhancer */
+* { scroll-behavior: smooth; }
+
+/* Selection color */
+::selection {
+  background: rgba(100,255,218,0.25);
+  color: #e6f1ff;
+}
