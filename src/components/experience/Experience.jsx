@@ -23,6 +23,8 @@ import tap from "../../assets/tap.jpeg";
 import axsos from "../../assets/axsos.png";
 import knowledge from "../../assets/knowledge.png";
 import teia from "../../assets/teia.jpg";
+
+
 import exalt from "../../assets/exalt.png";
 import aaup from "../../assets/aaup.png";
 import AI_Consulting_Services from "../../assets/AI-Consulting-Services.jpeg";
