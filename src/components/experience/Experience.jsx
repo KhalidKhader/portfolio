@@ -22,7 +22,7 @@ import Report from "../../assets/MyInternshipreport.docx";
 import tap from "../../assets/tap.jpeg";
 import axsos from "../../assets/axsos.png";
 import knowledge from "../../assets/knowledge.png";
-import manara from "../../assets/manara.png";
+import teia from "../../assets/teia.jpg";
 import exalt from "../../assets/exalt.png";
 import aaup from "../../assets/aaup.png";
 import AI_Consulting_Services from "../../assets/AI-Consulting-Services.jpeg";
@@ -61,7 +61,7 @@ const Experience = () => {
       role: "AI Engineer & Machine Learning Researcher",
       period: "2023 – 2025",
       description: "Worked as an AI Engineer and Machine Learning Researcher at TEIA, contributing to R&D projects focused on AI-powered solutions for healthcare, intelligent systems, and data-driven applications. Developed computer vision models for medical image analysis, implemented NLP pipelines, and collaborated on brain tumor detection research that led to a published IEEE paper (2025). Spearheaded AI product prototyping and integration with cloud-based ML deployment pipelines.",
-      image: manara,
+      image: teia,
       badge: "Research",
       links: []
     },
@@ -170,15 +170,6 @@ const Experience = () => {
         }
       ]
     },
-    {
-      id: 10,
-      company: "Knowledge - Palestine 🇵🇸",
-      role: "AI & Technology Educator",
-      period: "2023 – 2024",
-      description: "Delivered specialized training sessions on Artificial Intelligence, Machine Learning, and Data Science to professionals and students under the Knowledge platform. Designed and executed hands-on workshops on Python, scikit-learn, TensorFlow, and practical ML deployment, helping participants build production-level AI skills.",
-      image: knowledge,
-      links: []
-    }
   ];
 
   // Function to render link buttons

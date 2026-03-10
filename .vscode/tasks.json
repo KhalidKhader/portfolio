@@ -8,6 +8,13 @@
 			"isBackground": true,
 			"problemMatcher": [],
 			"group": "build"
+		},
+		{
+			"label": "Portfolio Dev Server (OpenSSL)",
+			"type": "shell",
+			"command": "NODE_OPTIONS=--openssl-legacy-provider npm start",
+			"isBackground": true,
+			"problemMatcher": []
 		}
 	]
 }
