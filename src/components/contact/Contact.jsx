@@ -109,6 +109,15 @@ const Contact = () => {
       link: "0568669955",
       buttonText: "Call me or send a Message"
     }
+    ,
+    {
+      id: 5,
+      icon: <MdAddCall />,
+      title: "Phone",
+      value: "0568669955",
+      link: "0568669955",
+      buttonText: "Call me or send a Message"
+    }
   ];
 
   return (

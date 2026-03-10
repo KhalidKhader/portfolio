@@ -30,9 +30,9 @@ const About = () => {
       icon: <FaAward fontSize="inherit" />,
       title: "Experience",
       items: [
-        "+3 Years Professional Experience",
+        "+4 Years Professional Experience",
         "+1 Year Web Development",
-        "+2 Years AI and ML Engineering"
+        "+3 Years AI and ML Engineering"
       ]
     },
     {
